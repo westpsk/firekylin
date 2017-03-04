@@ -54,3 +54,6 @@ output.theme/
 build/firekylin
 
 75team.sh
+
+#config
+nginx.conf
