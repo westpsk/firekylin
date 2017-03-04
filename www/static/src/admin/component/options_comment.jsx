@@ -14,18 +14,18 @@ import OptionsStore from '../store/options';
 import TipAction from 'common/action/tip';
 import ModalAction from 'common/action/modal';
 
-export default class extends Base {
+module.exports = class extends Base {
   constructor(props){
     super(props);
     let comment = SysConfig.options.comment;
     if(typeof comment === 'string'){
       comment = JSON.parse(comment);
     }
+    comment.name = unescape(comment.name);
     this.state = {
       submitting: false,
       comment: comment
     };
-    this.commentType = comment.type;
   }
   componentDidMount(){
     this.listenTo(OptionsStore, this.handleTrigger.bind(this));
@@ -62,10 +62,8 @@ export default class extends Base {
   }
 
   openDialog(){
-    let url = "/static/img/duoshuo.jpg";
-    if(this.commentType === 'disqus'){
-      url = "/static/img/disqus.jpg";
-    }
+    let comment = this.state.comment;
+    let url = `/static/img/${comment.type}.jpg`;
     let content = (<div className="center">
       <a href={url} target="_blank"><img src={url} style={{maxWidth: '100%'}} /></a>
     </div>);
@@ -78,13 +76,14 @@ export default class extends Base {
           name='type'
           value={comment.type}
           validate={(value) => {
-            this.commentType = value;
-            this.forceUpdate();
+            comment.type = value;
+            this.setState({ comment: comment });
             return true;
           }}
       >
         <Radio value='disqus' label='Disqus' />
         <Radio value='duoshuo' label='多说' />
+        <Radio value='changyan' label='畅言' />
         <Radio value='custom' label='自定义' />
       </RadioGroup>
     );
@@ -99,7 +98,7 @@ export default class extends Base {
             { res }
           </div>
 
-          {this.commentType != 'custom' ?
+          {comment.type != 'custom' ?
           <div className="form-group">
             <label>网站名称（<a onClick={this.openDialog.bind(this)}>有疑问</a>）</label>
             <ValidatedInput

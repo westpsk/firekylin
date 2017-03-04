@@ -4,8 +4,10 @@ import PostCreate from './post_create';
 import PageAction from 'admin/action/page';
 import PageStore from 'admin/store/page';
 import TipAction from 'common/action/tip';
+import ThemeAction from 'admin/action/theme';
+import ThemeStore from 'admin/store/theme';
 
-export default class extends PostCreate {
+module.exports = class extends PostCreate {
   type = 1;
 
   componentWillMount() {
@@ -16,6 +18,10 @@ export default class extends PostCreate {
     }
 
     this.state.postInfo.pathname = this.props.location.query.pathname;
+
+
+    this.listenTo(ThemeStore, this.getThemeTemplateList.bind(this));
+    ThemeAction.getPageTemplateList(window.SysConfig.options.theme || 'firekylin');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,6 +48,13 @@ export default class extends PostCreate {
           data.create_time = '';
         }
         data.create_time = data.create_time ? moment( new Date(data.create_time) ).format('YYYY-MM-DD HH:mm:ss') : data.create_time;
+        if( !data.options ) {
+          data.options = {push_sites: []};
+        } else if( typeof(data.options) === 'string' ) {
+          data.options = JSON.parse(data.options);
+        } else {
+          data.options.push_sites = data.options.push_sites || [];
+        }
         this.setState({postInfo: data});
         break;
     }

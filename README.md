@@ -1,67 +1,83 @@
-## FireKylin
+<div align="center">
+  <a href="https://github.com/75team/Firekylin">
+    <img width="200" heigth="200" src="https://s1.ssl.qhres.com/static/0c8555d630012930.svg">
+  </a>  
 
-A Simple & Fast Node Bloging Platform Base On ThinkJS 2.0 & ReactJS & ES2015+
+  <h1>Firekylin</h1>
 
-使用 FireKylin 构建的博客系统（排名不分先后）：
+  <div>
+    <a href="https://github.com/75team/firekylin">
+      <img src="https://img.shields.io/badge/node-%3E%3D4.0-red.svg?style=flat-square" alt="node version required" />
+    </a>
+    <a href="https://github.com/75team/firekylin/releases">
+      <img src="https://img.shields.io/github/release/75team/firekylin.svg?style=flat-square" alt="GitHub release" />
+    </a>
+    <a href="https://github.com/75team/firekylin/releases">
+      <img src="https://img.shields.io/github/downloads/75team/firekylin/total.svg?style=flat-square" alt="Github All Releases" />
+    </a>
+  </div>
+  <div>
+    <a href="https://github.com/75team/firekylin/issues?q=is%3Aissue+is%3Aclosed">
+      <img src="https://img.shields.io/github/issues-closed-raw/75team/firekylin.svg?style=flat-square" alt="" />
+    </a>
+    <a href="https://github.com/75team/firekylin/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/75team/firekylin.svg?colorB=f48041&style=flat-square" alt="license" />
+    </a>
+    <a href="https://gitter.im/fire_kylin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+      <img src="https://img.shields.io/gitter/room/firekylin/Lobby.svg?style=flat-square&colorB=96c312" alt="Gitter" />
+    </a>
+  </div>
 
-* http://www.75team.com/ - 奇舞团博客
-* http://blog.h5jun.com/ - 月影的博客
-* http://gyblog.cn/ - 光宇的博客
-* http://welefen.com/ - welefen 的博客
-* https://haozi.me/ - 耗子么
-* https://imjiangtao.com - 江涛的博客
-* http://aztack.wang/ - Aztack's blog
-* https://blog.cosli.top/ - 且等风来
-* http://lisongfeng.cn - 为之漫笔
+  <p>A Simple & Fast Node Blogging Platform Base On ThinkJS 2.0 & ReactJS & ES2015+.</p>
+</div>
 
-如果你的博客也是用 FireKylin 构建的，请到 https://github.com/75team/firekylin/issues/34 提交网址。
 
 ## 安装
 
-[下载最新的安装包 - v0.10.0](https://raw.githubusercontent.com/75team/firekylin/master/build/firekylin_0.10.0.tar.gz)
+普通用户安装参见 [普通安装](https://github.com/75team/firekylin/wiki/安装)，如需对 Firekylin 进行开发，可参考 [仓库版安装](https://github.com/75team/firekylin/wiki/仓库版安装)
 
-## 安装依赖
+## 如何使用
 
-解压安装包，执行 `npm install` 安装对应的依赖（执行之前请确认已有 Node.js 环境，Node.js 版本要大于 4.0）。
+- [添加和管理文章](https://github.com/75team/firekylin/wiki/%E6%96%87%E7%AB%A0)
+- [添加和管理页面](https://github.com/75team/firekylin/wiki/%E9%A1%B5%E9%9D%A2)
+- [添加和管理推送](https://github.com/75team/firekylin/wiki/%E6%8E%A8%E9%80%81)
+- [调整网站外观](https://github.com/75team/firekylin/wiki/%E4%B8%BB%E9%A2%98%E5%A4%96%E8%A7%82)
+- [系统设置](https://github.com/75team/firekylin/wiki/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE)
 
-## 修改端口
+## 常见问题
 
-默认 Firekylin 用的端口是 `8360`，如果该端口已经被占用或者不想使用该端口，那么可以在项目目录下新建文件 `port` （是的，这个文件没有后缀名），文件内容为端口号。如：
+如果您在使用过程中遇到问题，请查看 [问题解答](https://github.com/75team/firekylin/wiki/问题解答) 中的解答，或者在 [GitHub](https://github.com/75team/firekylin/wiki/issues) 及 [Gitter](https://gitter.im/fire_kylin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 上提问。
 
-设置文件 `port` 的内容为 `9999`，表示设置的端口为 `9999`。
+## 用户列表
 
-## 启动服务
+[奇舞团博客](http://www.75team.com/) / 
+[奇虎360-addops](https://addops.cn) / 
+[十年踪迹的博客](http://h5jun.com/) / 
+[光宇的博客](http://gyblog.cn/) / 
+[welefen的博客](http://welefen.com/) / 
+[耗子么](https://haozi.me/) /
+[江涛的博客](https://imjiangtao.com) / 
+[Aztack's blog](http://aztack.wang/) / 
+[且等风来](https://blog.cosli.top/) / 
+[为之漫笔](http://lisongfeng.cn) / 
+[Steven's Club](https://g.32ph.com/) / 
+[大路小兵的博客](https://cooxa.com/) / 
+[小撸的博客](http://www.60sky.com/) / 
+[花花的博客](https://imwineki.cn/)
 
-执行 `npm start`，然后访问 `http://127.0.0.1:8360`，根据提示填写相关信息进行安装。
+如果你的博客也是用 FireKylin 构建的，请到 https://github.com/75team/firekylin/issues/34 提交网址。
 
-## 配置 PM2
+## 开发者文档
 
-在服务器上推荐使用 `pm2` 来管理 Node.js 服务，可以通过 `sudo npm install -g pm2` 来安装 `pm2`。
 
-将项目下的 `pm2_default.json` 文件改为 `pm2.json`，将文件中的 `cwd` 配置值改为项目的当前路径。
+- [主题开发](https://github.com/75team/firekylin/wiki/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91)
+- [贡献代码](https://github.com/75team/firekylin/wiki/%E8%B4%A1%E7%8C%AE%E4%BB%A3%E7%A0%81)
 
-然后通过 `pm2 start pm2.json` 来启动项目。
+## 捐赠我们
 
-## 配置 nginx
+你的每一份帮助都将使 Firekylin 做的更好，走的更远！我们一直在坚持不懈地努力，并坚持让 Firekylin 完全开源免费，你的帮助将使我们更有动力和信心！
 
-将项目下的 `nginx_default.conf` 改为 `nginx_conf`，修改文件中的 `server_name`、`root` 和 `set $node_port` 等配置值，然后将该文件软链到 nginx 的配置目录下。
+欢迎使用支付宝或者微信扫描二维码进行捐赠！已捐赠用户将在 [捐赠列表](https://github.com/75team/firekylin/wiki/捐赠列表) 中列出。
 
-假设 nginx 的配置目录为 `/usr/local/nginx/conf/include`，那么可以通过下面的命令设置软链：
-
-```sh
-sudo ln -s path/to/nginx.conf /usr/local/nginx/conf/include/www.example.com.conf
-```
-
-需要将 `path.to` 改为当前的项目路径， `www.example.com` 改为对应的域名。
-
-## 升级
-
-下载最新的安装包，解压覆盖原有的目录，然后通过 `pm2 restart pm2.json` 重启服务。
-
-部分版本升级可能需要更新数据表，具体请见[这里](https://github.com/75team/firekylin/wiki/%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)。
-
-## 贡献代码
-
-安装包里的代码都是编译后的（如：React 代码已经编译，HTML、JS、CSS 都已经压缩，并且使用了 LocalStorage 等优化技术）。如果想贡献代码，可以直接 clone 项目代码。
-
-如何开发请见[这里](https://github.com/75team/firekylin/wiki/%E5%A6%82%E4%BD%95%E8%B4%A1%E7%8C%AE%E4%BB%A3%E7%A0%81%EF%BC%9F)。
+<img width="300" src="https://p5.ssl.qhimg.com/t013f422b5b319becbb.png" alt="donate by alipay" />
+<img width="300" src="https://p4.ssl.qhimg.com/t0142965a40989b8d7a.png" alt="donate by wechat" />

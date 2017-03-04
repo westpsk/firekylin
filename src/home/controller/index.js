@@ -5,10 +5,16 @@ import Base from './base.js';
 
 export default class extends Base {
   /**
-   * index
+   * 首页如果设置了自定义首页则渲染对应页面
    * @return {[type]} [description]
    */
-  indexAction(){
+  async indexAction(){
+    let {frontPage} = await this.model('options').getOptions();
+    if( frontPage ) {
+      this.get('pathname', frontPage);
+      return this.action('post', 'page');
+    }
+
     return this.action('post', 'list');
   }
   /**
@@ -87,7 +93,7 @@ export default class extends Base {
    */
   async contributorAction() {
     if( !this.options.hasOwnProperty('push') || this.options.push == 0) {
-      return this.fail('推送申请功能未开启');
+      return this.fail('PUSH_CLOSED');
     }
     if( this.isGet() ) {
       return this.display();

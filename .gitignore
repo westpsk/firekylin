@@ -50,10 +50,17 @@ sitemap.xml
 output/
 output.theme/
 .version
-
-build/firekylin
+.installed
+build
 
 75team.sh
+<<<<<<< HEAD
 
 #config
 nginx.conf
+=======
+stc/
+jsconfig.json
+.vscode
+www/theme/firekylin_new
+>>>>>>> 93089ecc706a2d17327503698c977630238343ac

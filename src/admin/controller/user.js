@@ -33,8 +33,8 @@ export default class extends Base {
       return this.fail('ACCOUNT_ERROR');
     }
 
-    //帐号是否被禁用
-    if((userInfo.status | 0) !== 1){
+    //帐号是否被禁用，且投稿者不允许登录
+    if((userInfo.status | 0) !== 1 || userInfo.type === 3){
       return this.fail('ACCOUNT_FORBIDDEN');
     }
 
@@ -50,10 +50,27 @@ export default class extends Base {
   }
   /**
    * logout
-   * @return {} 
+   * @return {}
    */
   async logoutAction(){
     await this.session('userInfo', '');
     return this.redirect('/');
+  }
+
+  /**
+   * update user password
+   */
+  async passwordAction() {
+    let userInfo = await this.session('userInfo') || {};
+    if(think.isEmpty(userInfo)){
+      return this.fail('USER_NOT_LOGIN');
+    }
+
+    let rows = await this.model('user').saveUser({
+      password: this.post('password'),
+      id: userInfo.id
+    }, this.ip());
+
+    return this.success(rows);
   }
 }
